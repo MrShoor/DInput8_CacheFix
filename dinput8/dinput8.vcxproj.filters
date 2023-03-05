@@ -24,6 +24,9 @@
     <ClInclude Include="DirectInput8A.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="DirectInput8W.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -35,5 +38,13 @@
     <ClCompile Include="DirectInput8A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DirectInput8W.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dinput8.def">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

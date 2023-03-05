@@ -1,16 +1,35 @@
-# CrashFix
+# DInput8_CacheFix
 
-This is a fix for USB microphone stuttering and other USB issues occuring while playing Crash Bandicoot N. Sane Trilogy.
+This is a fix for USB microphone stuttering and other USB issues occurring while playing different games.
 
-The issue with Crash is that it tries to enumerate all DirectInput devices, i.e. search for new controllers, about 10 times a second which is both I/O intensive and completely unnecessary as Crash does not even support legacy DirectInput controllers. The fix works by faking the DirectInput DLL to always report 0 input devices without actually doing any I/O.
+A some games (like Crash Bandicoot, MK11, DOA6,detroitbecomehuman, okamihd, Wo Long etc.) tries to enumerate all DirectInput devices, i.e. search for new controllers, about 10 times a second which is both I/O intensive and completely unnecessary.
+
+The original fix ( https://github.com/Quidrex/CrashFix ) just reports 0 input devices without actually doing any I/O.
+But it can be a problem when games really need such devices.
+
+The current fix returns real devices, but stores a list of all devices for 30 seconds in the local cache.
 
 ## Installation
 
-Copy `dinput8.dll` to `$YOUR_STEAM_LIBRARY_FOLDER\steamapps\common\Crash Bandicoot - N Sane Trilogy\`
+For installation this fix you need to rename real "C:\Windows\System32\dinput8.dll" into "C:\Windows\System32\_dinput8.dll" 
+and copy dinput8.dll from this releases into "C:\Windows\System32\dinput8.dll"
+
+For renaming original "C:\Windows\System32\dinput8.dll" into "C:\Windows\System32\_dinput8.dll" you may require to take ownership of the original dinput8.dll file
+It can be done by this command (with Administration rights):
+takeown /F "C:\Windows\System32\dinput8.dll"
+
+## Uninstalling
+
+For uninstalling - just remove fake "C:\Windows\System32\dinput8.dll" and then rename "C:\Windows\System32\_dinput8.dll" back into "C:\Windows\System32\dinput8.dll"
+
+## Remarks
+
+The fix is global for the whole system. In most cases, it should work well with all games, but it has a 30-sec cache. So if you change controllers on the fly - it can require up to 30 seconds until the game will see new controllers. Or you can just restart the game.
 
 ## License
 
 Copyright (c) 2018 Gian Perrone
+Copyright (c) 2023 Alex Busarov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
