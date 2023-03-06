@@ -29,6 +29,7 @@ The fix is global for the whole system. In most cases, it should work well with 
 ## License
 
 Copyright (c) 2018 Gian Perrone
+
 Copyright (c) 2023 Alex Busarov
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
