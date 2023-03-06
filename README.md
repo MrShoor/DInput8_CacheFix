@@ -11,16 +11,16 @@ The current fix returns real devices, but stores a list of all devices for 30 se
 
 ## Installation
 
-For installation this fix you need to rename real "C:\Windows\System32\dinput8.dll" into "C:\Windows\System32\_dinput8.dll" 
+For installation this fix you need to rename real "C:\Windows\System32\dinput8.dll" into "C:\Windows\System32\\_dinput8.dll" 
 and copy dinput8.dll from this releases into "C:\Windows\System32\dinput8.dll"
 
-For renaming original "C:\Windows\System32\dinput8.dll" into "C:\Windows\System32\_dinput8.dll" you may require to take ownership of the original dinput8.dll file
+For renaming original "C:\Windows\System32\dinput8.dll" into "C:\Windows\System32\\_dinput8.dll" you may require to take ownership of the original dinput8.dll file
 It can be done by this command (with Administration rights):
 takeown /F "C:\Windows\System32\dinput8.dll"
 
 ## Uninstalling
 
-For uninstalling - just remove fake "C:\Windows\System32\dinput8.dll" and then rename "C:\Windows\System32\_dinput8.dll" back into "C:\Windows\System32\dinput8.dll"
+For uninstalling - just remove fake "C:\Windows\System32\dinput8.dll" and then rename "C:\Windows\System32\\_dinput8.dll" back into "C:\Windows\System32\dinput8.dll"
 
 ## Remarks
 
